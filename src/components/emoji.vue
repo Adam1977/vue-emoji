@@ -1,22 +1,22 @@
 <template>
   <div class="emoji">
     <ul class="emoji-controller">
-      <li 
-        v-for="(pannel,index) in pannels" 
+      <li
+        v-for="(pannel,index) in pannels"
         @click="changeActive(index)"
         :class="{'active': index === activeIndex}">{{ pannel }}</li>
     </ul>
     <ul class="emoji-container">
-      <li 
-        v-for="(emojiGroup, index) in emojis" 
-        style="padding: 0" 
+      <li
+        v-for="(emojiGroup, index) in emojis"
+        style="padding: 0"
         :key="index"
         v-if="index === activeIndex">
-        <a 
-          href="javascript:;" 
-          v-for="(emoji, index) in emojiGroup"  
+        <a
+          href="javascript:;"
+          v-for="(emoji, index) in emojiGroup"
           :key="index" @click="selectItem(emoji)">
-           <span 
+           <span
               class="emoji-item"
               :title="emoji"
               :class="'sprite-' + getPureName(emoji)"></span>
@@ -58,8 +58,9 @@ export default {
 }
 </script>
 
+<style lang='scss' scoped src="../assets/scss/emoji-sprite.scss"></style>
 <style lang='scss' scoped>
-@import '../assets/scss/emoji-sprite.scss';
+/*@import '../assets/scss/emoji-sprite.scss';*/
 
 .emoji {
   width: 380px;
